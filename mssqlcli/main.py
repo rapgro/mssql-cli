@@ -11,28 +11,14 @@ import six
 from mssqlcli.config import config_location
 from mssqlcli.__init__ import __version__
 from mssqlcli.mssqlclioptionsparser import create_parser
-import mssqlcli.telemetry as telemetry_session
 
 click.disable_unicode_literals_warning = True
-
-
-MSSQLCLI_TELEMETRY_PROMPT = """
-Telemetry
----------
-By default, mssql-cli collects usage data in order to improve your experience.
-The data is anonymous and does not include commandline argument values.
-The data is collected by Microsoft.
-
-Disable telemetry collection by setting environment variable MSSQL_CLI_TELEMETRY_OPTOUT to 'True' or '1'.
-
-Microsoft Privacy statement: https://go.microsoft.com/fwlink/?LinkId=521839
-"""
 
 
 def run_cli_with(options):
 
     if create_config_dir_for_first_use():
-        display_telemetry_message()
+        print('created configuration directory')
 
     display_version_message(options)
 
@@ -50,7 +36,6 @@ def run_cli_with(options):
     mssqlcli = MssqlCli(options)
     try:
         mssqlcli.connect_to_database()
-        telemetry_session.set_server_information(mssqlcli.mssqlcliclient_main)
 
         if mssqlcli.interactive_mode:
             mssqlcli.run()
@@ -103,19 +88,13 @@ def display_version_message(options):
         sys.exit(0)
 
 
-def display_telemetry_message():
-    print(MSSQLCLI_TELEMETRY_PROMPT)
-
-
 def main():
     try:
-        telemetry_session.start()
         mssqlcli_options_parser = create_parser()
         mssqlcli_options = mssqlcli_options_parser.parse_args(sys.argv[1:])
         run_cli_with(mssqlcli_options)
     finally:
-        # Upload telemetry async in a separate process.
-        telemetry_session.conclude()
+        print('done')
 
 
 if __name__ == "__main__":
