@@ -34,7 +34,6 @@ install_requirements = [
     'configobj >= 5.0.6',
     'humanize >= 0.5.1',
     'cli_helpers >= 0.2.3, < 1.0.0',
-    'future>=0.16.0',
     'wheel>=0.29.0',
 ]
 
