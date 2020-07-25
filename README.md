@@ -1,7 +1,8 @@
 [![PyPI](https://badge.fury.io/py/mssql-cli.svg)](https://pypi.python.org/pypi/mssql-cli)
-[![Python 2.7|3.4|3.5|3.6|3.7|3.8](https://img.shields.io/badge/python-2.7&nbsp;|&nbsp;3.4&nbsp;|&nbsp;3.5&nbsp;|&nbsp;3.6&nbsp;|&nbsp;3.7&nbsp;|&nbsp;3.8-blue.svg)](https://github.com/dbcli/mssql-cli)
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://github.com/dbcli/mssql-cli)
 
-# mssql-cli
+# mssql-cli-ntm
+This is a fork of mssql-cli.
 [**mssql-cli**](https://github.com/dbcli/mssql-cli) is an interactive command line query tool for SQL Server. This open source tool works cross-platform and proud to be a part of the [dbcli](https://github.com/dbcli) community. 
 
 ![mssql-cli Autocomplete](https://github.com/dbcli/mssql-cli/raw/master/screenshots/mssql-cli-autocomplete.gif)
@@ -19,7 +20,7 @@ Read the section below to quickly get started with mssql-cli. Consult the [usage
 
 ### Install mssql-cli
 Platform-specific installation instructions are below:
-| [Windows](https://github.com/dbcli/mssql-cli/blob/master/doc/installation/windows.md#windows-installation) (preview) | [macOS](https://github.com/dbcli/mssql-cli/blob/master/doc/installation/macos.md#macos-installation) | [Linux](https://github.com/dbcli/mssql-cli/blob/master/doc/installation/linux.md) |
+| [Linux](https://github.com/dbcli/mssql-cli/blob/master/doc/installation/linux.md) |
 | - | - | - |
 
 Visit the [installation reference guide](https://github.com/dbcli/mssql-cli/tree/master/doc/installation) to view all supported releases and downloads.
@@ -52,7 +53,7 @@ mssql-cli --help
 Please refer to the [usage guide](https://github.com/dbcli/mssql-cli/tree/master/doc/usage_guide.md) for details on options and example usage. If you are having any issues using mssql-cli, please see the [troubleshooting guide](https://github.com/dbcli/mssql-cli/blob/master/doc/troubleshooting_guide.md).
 
 ## Telemetry
-The mssql-cli tool includes a telemetry feature. Please refer to the [telemetry guide](https://github.com/dbcli/mssql-cli/tree/master/doc/telemetry_guide.md) for more information.
+The original mssql-cli tool includes a telemetry feature. Telemetry is dropped in this fork.
 
 ## Contributing
 If you would like to contribute to the project, please refer to the [development guide](https://github.com/dbcli/mssql-cli/tree/master/doc/development_guide.md).
